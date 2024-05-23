@@ -1,0 +1,370 @@
+$greyish:#555555;
+$common-height:80px;
+$placeholder-color: #999;
+$frosted-glass: rgba(255, 255, 255, 0.5);
+$white: #fff;
+$special:#141C27;
+$jost: 'Jost', sans-serif;
+$rubik: 'Rubik', sans-serif;
+$ropa: 'Ropa Sans', sans-serif;
+$island:'Island Moments', cursive;
+$silver: #C0C0C0;
+.progress-page {
+    font-family: $jost;
+    padding: 20px;
+    width: 800px;
+    margin-left: 300px;
+
+    .facts{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        .overall-completion {
+            border-top: 1px solid #555;
+            border-bottom: 1px solid #000;
+            border-right: 1px solid #000;
+            border-left: 1px solid #000;
+            box-shadow: 5px 5px 5px #446f49;
+            width: 200px;
+            padding: 20px;
+           
+          }
+          .days-left {
+            border-top: 1px solid #555;
+            border-bottom: 1px solid #000;
+            border-right: 1px solid #000;
+            border-left: 1px solid #000;
+            box-shadow: 5px 5px 5px #681742;
+            width: 200px;
+            padding: 20px;
+          }
+          .tasks-per-day{
+            border-top: 1px solid #555;
+            border-bottom: 1px solid #000;
+            border-right: 1px solid #000;
+            border-left: 1px solid #000;
+            box-shadow: 5px 5px 5px #1b676e;
+            width: 200px;
+            padding: 20px;
+          
+          }
+          .number-completed{
+            border-top: 1px solid #555;
+            border-bottom: 1px solid #000;
+            border-right: 1px solid #000;
+            border-left: 1px solid #000;
+            box-shadow: 5px 5px 5px #4e4506;
+            width: 200px;
+            padding: 20px;
+          
+          }
+    }
+  
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+  
+      h1 {
+        font-size: 2em;
+        color: #333;
+      }
+    }
+  
+    main {
+        .two{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .data2{
+                display: flex;
+                flex-direction: row;
+            }
+
+        .current-projects-progress {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        
+            .project {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              background: linear-gradient(to bottom, #15b6a3, #122d17); 
+                color: #fff;
+                padding: 20px;
+                border-radius: 5px;
+                width: 160px;
+        
+              h2 {
+                margin-bottom: 10px;
+                font-family: $jost;
+                font-size: 18px;
+                width: 190px;
+              }
+        
+              .progress-bar-container {
+                width: 180px;
+                height: 6px;
+                background-color: #e0e0e0;
+                // border-radius: 10px;
+                margin-bottom: 10px;
+                margin-top: 60px;
+
+        
+                .progress-bar {
+                  height: 7px;
+                  margin-top: -0.5px;
+                  background-color: #FF6F61;
+                  width: 0;
+                  transition: width 2s ease-in-out;
+                  border-radius: 0;
+                }
+              }
+            }
+        
+              p {
+                margin: 0;
+                font-size: 16px;
+                font-family: $jost;
+                color: #ccc;
+                font-weight: bold;
+              }
+            }
+          }
+
+
+      .project-details {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        .milestones,
+    .team-members {
+      margin-top: 20px;
+
+      h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          font-size: 1.1em;
+          margin-bottom: 5px;
+        }
+      }
+    }
+        .detail {
+          flex: 1;
+          padding: 10px;
+          border-radius: 5px;
+  
+          h2 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+          }
+  
+          p {
+            margin: 0;
+          }
+        }
+      }
+  
+      .charts-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+  
+      .chart-container {
+        flex: 1;
+        max-width: 500px;
+        padding: 20px;
+        border-radius: 5px;
+      }
+  
+      .top-workers {
+        margin-top: 20px;
+  
+        h2 {
+          font-size: 1.5em;
+          margin-bottom: 10px;
+        }
+  
+        ul {
+          list-style: none;
+          padding: 0;
+  
+          li {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+  .top-workers {
+    margin-top: 20px;
+  
+    h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+  
+    .performers-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+    }
+  
+    .performer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #15b6a3;
+      border-radius: 5px;
+      padding: 10px;
+  
+      .details {
+        flex: 1;
+  
+        h3 {
+          margin: 0;
+        }
+  
+        p {
+          margin: 5px 0;
+          font-size: 0.9em;
+        }
+      }
+  
+      .image {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+  
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  .productivity-graph {
+    margin-bottom: 20px;
+
+    .chart-container {
+      padding: 20px;
+      border-radius: 5px;
+      width: 600px;
+    }
+  }
+  .milestones {
+    margin-bottom: 20px;
+    form {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      width: 600px;
+  
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+  
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        width: 500px;
+      }
+  
+      button[type="submit"] {
+        background-color: #ffcc00;
+        color: #333;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #ffc700;
+        }
+      }
+    }
+  
+  
+    h2 {
+      margin-bottom: 20px;
+      color: #ffcc00;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .milestone {
+      background-color: #333;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease-in-out;
+  
+      &:hover {
+        transform: translateY(-5px);
+      }
+  
+      .milestone-header {
+        border-bottom: 1px solid #666;
+        margin-bottom: 10px;
+
+        button{
+            background-color: #ffcc00;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            font-family: $jost;
+      
+            &:hover {
+              background-color: #800080;
+            }
+        }
+  
+        h3 {
+          color: #ffcc00;
+          margin-bottom: 5px;
+        }
+  
+        p {
+          color: #999;
+        }
+      }
+  
+      .milestone-details {
+        p {
+          color: #ccc;
+        }
+      }
+    }
+  }
+ 

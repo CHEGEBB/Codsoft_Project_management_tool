@@ -1,0 +1,161 @@
+$greyish:#555555;
+$common-height:80px;
+$placeholder-color: #999;
+$frosted-glass: rgba(255, 255, 255, 0.5);
+$white: #fff;
+$special:#141C27;
+$jost: 'Jost', sans-serif;
+$rubik: 'Rubik', sans-serif;
+$ropa: 'Ropa Sans', sans-serif;
+$island:'Island Moments', cursive;
+$silver: #C0C0C0;
+$darkpink : #FF1493;
+.teams-page {
+    padding: 20px;
+    font-family:$jost;
+    max-width: 800px;
+    margin-left: 300px;
+  }
+  
+  h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: $darkpink;
+  }
+  
+  .team-members {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 10px;
+    row-gap: 20px;
+  }
+  
+  .team-member {
+    width: calc(33.33% - 20px);
+    margin-bottom: 40px;
+    perspective: 1000px;
+    position: relative;
+  }
+  
+  .flip-card {
+    width: 300px;
+    height: 200px;
+    position: relative;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-inner {
+    width: 300px;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    width: 200px;
+    height: 200px;
+    // gap: 20px;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+    
+    &:hover {
+
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
+    }
+  }
+  
+  .flip-card-front {
+    background: linear-gradient(to bottom, #c6cec7, #201d20); 
+
+    h2{
+        color: $white;
+        font-family: $jost;
+        font-size: 20px;
+        text-align: center;
+    }
+    p{
+        color: $white;
+        font-family: $jost;
+        font-size: 16px;
+        text-align: center;
+    }
+
+   
+  }
+  
+  .flip-card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column-reverse;
+
+    .un{
+      
+        margin-top: -10px;
+    }
+
+    .address{
+        font-size: 12px;
+        
+    }
+  }
+  .unique{
+    font-size: 16px;
+    width: 200px;
+    text-align: center;
+  }
+
+  
+  .profile-picture img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .role {
+    font-style: italic;
+    color: #666;
+  }
+  
+  .contact-info {
+    text-align: center;
+  }
+  
+  .contact-info p {
+    margin-bottom: 5px;
+  }
+  
+  .contact-info a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  .flip-card:hover .flip-card-inner .flip-card-back h2 {
+    opacity: 0;
+  }
+  .pers{
+    display: flex;
+    flex-direction: column;
+
+    .info-pers{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  

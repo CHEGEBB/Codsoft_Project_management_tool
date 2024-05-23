@@ -1,0 +1,18 @@
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+  }
+  
+  .circular-slider {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: #333;
+  }
+.dark-mode-toggle img{
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+}
+  

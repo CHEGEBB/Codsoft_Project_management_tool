@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Jost:ital,wght@0,100..900;1,100..900&family=Ropa+Sans:ital@0;1&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+$greyish: #555555;
+$celestialOrange: #FF6F61;
+$common-height: 80px;
+$placeholder-color: #999;
+$frosted-glass: rgba(255, 255, 255, 0.5);
+$special: #141C27;
+$silver: #C0C0C0;
+$women-background-image: url("../images/wom.jpg");
+$mens-background-image: url("../images/style2.jpg");
+$jost: 'Jost', sans-serif;
+$rubik: 'Rubik', sans-serif;
+$ropa: 'Ropa Sans', sans-serif;
+$island: 'Island Moments', cursive;
+$softpink: #FFC0CB;
+$darkpink: #FF007F;
+
+.login-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("../images/bg2.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  .overlay {
+    background-color: rgba(5, 5, 5, 0.6);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .right{
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    padding: 0px;
+  }
+
+  .overlay-2 {
+    background-color: rgba(10, 11, 11, 0.9);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+  .left-container {
+    padding: 40px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+    width: 350px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #8f37cd;
+
+
+    .horizontal-nav {
+      ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        font-family: $ropa;
+        font-size: 20px;
+      }
+    
+      ul li {
+        margin-right: 20px;
+        transition: all 0.3s ease;
+      }
+    
+      ul li:last-child {
+        margin-right: 0;
+      }
+    
+      ul li a {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        position: relative;
+        padding-bottom: 5px;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #8f37cd;
+        }
+
+        &.active {
+          font-weight: bold;
+          width: 90px;
+          background-color: transparent;
+         
+
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            transition: width 0.3s ease;
+            background-color: #8f37cd;
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+    
+
+    .login-form {
+      h2 {
+        font-size: 24px;
+        margin-top: 15px;
+        font-family: $ropa;
+        color: #8f37cd;
+      }
+
+      .form-group {
+        margin-top: 20px;
+
+        label {
+          display: block;
+          margin-bottom: 5px;
+          font-family: $jost;
+        }
+
+        input {
+          width: 320px;
+          padding: 10px;
+          border: 1px solid #8f37cd;
+          border-radius: 5px;
+          font-family: $jost;
+          outline: none;
+
+          &:hover {
+            border: 1px solid $darkpink;
+          }
+
+          &::placeholder {
+            color: $placeholder-color;
+          }
+        
+        &.error {
+          input {
+            border: 1px solid red;
+          }
+        }
+      }
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #8f37cd;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 50px;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+
+      .login-link {
+        margin-top: 20px;
+        font-family: $jost;
+
+        a {
+          text-decoration: none;
+          color: #007bff;
+          font-family: $jost;
+
+          &:hover {
+            text-decoration: underline;
+
+          }
+        }
+      }
+    }
+  }
+}
+.product-image{
+  width: 545px;
+  height: 545px;
+  object-fit: cover;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.product-description{
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  font-family: $jost;
+  width: 300px;
+  text-align: center;
+  margin-left: 60px;
+  margin-top: 90px;
+}
+.zoom-in-out {
+  animation: zoomInOut 6s infinite alternate;
+}
+.product-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+.zoom-in-out {
+  animation: zoomInOut 3s ease-in-out infinite alternate;
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.99);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -50px;
+}
+
+.image-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 5px;
+}
+
+.image-indicator.active {
+  background-color: crimson;
+}
+.forgot-password {
+  margin-top: 20px;
+  font-family: $jost;
+
+  a {
+    text-decoration: none;
+    color: #007bff;
+    font-family: $jost;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.signup-link {
+  margin-top: 20px;
+  font-family: $jost;
+
+  a {
+    text-decoration: none;
+    color: #007bff;
+    font-family: $jost;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+$greyish:#555555;
+$common-height:80px;
+$placeholder-color: #999;
+$frosted-glass: rgba(255, 255, 255, 0.5);
+$white: #fff;
+$special:#141C27;
+$jost: 'Jost', sans-serif;
+$rubik: 'Rubik', sans-serif;
+$ropa: 'Ropa Sans', sans-serif;
+$island:'Island Moments', cursive;
+$silver: #C0C0C0;
+$darkpink : #FF1493;
+.deadline-page {
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #282c34;
+      color: #fff;
+      width: 800px;
+      margin-left: 390px;
+      font-family: $ropa;
+  
+      h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        font-family: $ropa;
+      }
+    }
+  
+    main {
+      padding: 20px;
+      width: 800px;
+      margin-left: 400px;
+  
+      .countdown-section {
+        margin-bottom: 40px;
+  
+        h2 {
+          margin-bottom: 20px;
+          color: #ffcc00;
+          font-family: $ropa;
+        }
+  
+        .chart-container {
+          position: relative;
+          height: 300px;
+          width: 100%;
+        }
+      }
+  
+      .deadlines {
+        margin-bottom: 20px;
+  
+        h2 {
+          margin-bottom: 20px;
+          color: #ffcc00;
+          font-family: $ropa;
+        }
+  
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+  
+          .deadline {
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+            font-family: $jost;
+  
+            &:hover {
+              transform: translateY(-5px);
+            }
+  
+            .deadline-header {
+              display: flex;
+              justify-content: space-between;
+              border-bottom: 1px solid #666;
+              margin-bottom: 10px;
+  
+              h3 {
+                color: #ffcc00;
+                margin-bottom: 5px;
+              }
+  
+              p {
+                color: #999;
+              }
+  
+              button {
+                background-color: #ff4d4d;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                padding: 5px 10px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+  
+                &:hover {
+                  background-color: #ff0000;
+                }
+              }
+            }
+  
+            .deadline-details {
+              p {
+                color: #ccc;
+              }
+            }
+          }
+        }
+  
+        form {
+          margin-top: 20px;
+          border: 1px solid #ccc;
+          padding: 20px;
+          border-radius: 10px;
+          font-family: $jost;
+  
+          label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+          }
+  
+          input[type="text"],
+          input[type="date"],
+          textarea {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #c0c0c0;
+            border-radius: 5px;
+            font-size: 16px;
+
+            &:focus {
+              outline: none;
+              border-color: #ffcc00;
+            }
+            &:hover {
+              border-color: #72a37a;
+            }
+          }
+  
+          button[type="submit"] {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            font-family: $jost;
+  
+            &:hover {
+              background-color: #ffc700;
+            }
+          }
+        }
+      }
+    }
+  }
+  

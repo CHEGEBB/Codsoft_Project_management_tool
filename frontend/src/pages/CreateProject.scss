@@ -1,0 +1,435 @@
+$greyish:#555555;
+$common-height:80px;
+$placeholder-color: #999;
+$frosted-glass: rgba(255, 255, 255, 0.5);
+$white: #fff;
+$special:#141C27;
+$jost: 'Jost', sans-serif;
+$rubik: 'Rubik', sans-serif;
+$ropa: 'Ropa Sans', sans-serif;
+$island:'Island Moments', cursive;
+$silver: #C0C0C0;
+$darkpink : #FF1493;
+
+@mixin card{
+    background-color: #fff;
+    border: 1px solid $special;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.9);
+    width: 150px;
+    height: 200px;
+    color: #fff;
+    font-family: $jost;
+
+}
+@mixin project-card {
+    flex: 0 0 calc(33.333% - 20px);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    height: 200px;
+
+}
+
+.project-create {
+    padding: 20px;
+    border-radius: 10px;
+    width: 800px;
+    margin-left: 300px;
+    .project-us{
+        h1{
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: $ropa;
+            font-size: 30px;
+        
+        }
+        .man{
+        p{
+            font-family: $jost;
+            font-size: 20px;
+            margin-left: 20px;
+        
+        }
+    }
+    }
+    .us{
+        display: flex;
+        flex-direction: column;
+       
+
+        .ads{
+            display: flex;
+            flex-direction: row;
+            margin-left: 60px;
+
+            .easy-management-card1{
+                @include card;
+                background-color: #f55f; 
+                
+                &:hover{
+                    background: linear-gradient(to bottom, #f55f, rgb(49, 21, 21)); 
+                    transition: all 0.3s ease-in-out;
+                    transform:  scale(1.1);
+                    animation: ease-in-out;
+                    transform: 0.3s;
+                }
+            }
+            .Robust-Ai-intervention-card2{
+                @include card;
+                background-color:#218838;
+                 
+                &:hover{
+                    background: linear-gradient(to bottom, #218838, #122d17); 
+                    transition: all 0.3s ease-in-out;
+                    transform:  scale(1.1);
+                    animation: ease-in-out;
+                    transform: 0.3s;
+                }
+            }
+            .team-management-card3{
+                @include card;
+                background-color: #0056b3;
+                 
+                &:hover{
+                    background: linear-gradient(to bottom, #0056b3, #152a40); 
+                    transition: all 0.3s ease-in-out;
+                    transform:  scale(1.1);
+                    animation: ease-in-out;
+                    transform: 0.3s;
+                }
+            }
+            .organizational-focus-card4{
+                @include card;
+                background-color: #FF1493;
+                 
+                &:hover{
+                    background: linear-gradient(to bottom, #FF1493, #461046); 
+                    transition: all 0.3s ease-in-out;
+                    transform:  scale(1.1);
+                    animation: ease-in-out;
+                    transform: 0.3s;
+                }
+            }
+        }
+    }
+
+    h1 {
+        text-align: left;
+        margin-bottom: 20px;
+        font-family: $ropa;
+        font-size: 30px;
+        color: $darkpink;
+    }
+
+    .animated-form {
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 20px;
+        margin: 0 auto;
+
+    }
+    .create-project-form{
+        width: 75%;
+        height: 920px;
+        margin-left: -60px;
+        border-radius: 10px;
+
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        
+        label {
+            font-weight: bold;
+            margin-left: 70px;
+            margin-bottom: 5px;
+            font-family: $jost;
+
+        }
+        #projectName{
+            label{
+                margin-top: 50px;
+            }
+        }
+        #projectImages{
+            margin-left: 70px;
+        }
+        textarea{
+            width: 100%;
+            height: 100px;
+            padding: 8px;
+            border: none;
+            // border: 1px solid $special;
+            border-radius: 5px;
+            outline: none;
+            font-family: $jost; 
+            margin-left: 70px;
+            &:hover{
+                border: 1px solid #FF1493;
+            }
+            &:focus {
+                border-color: #007bff;
+            }
+            &::placeholder {
+                color: $placeholder-color;
+            }
+        }
+        input[type='text'],
+        input[type='date'],
+        select {
+            width: 100%;
+            padding: 8px;
+            // border: 1px solid $special;
+            border-radius: 5px;
+            outline: none;
+            font-family: $jost; 
+            margin-left: 70px;
+            border: none;
+
+            &:hover{
+                border: 1px solid $darkpink ;
+
+            }
+            &:focus {
+                border-color: #007bff;
+            }
+            &::placeholder {
+                color: $placeholder-color;
+            }
+        }
+    }
+
+    .form-check {
+        margin-bottom: 5px;
+        input[type='checkbox'],
+        input[type='radio'] {
+            margin-right: 5px;
+        }
+    }
+
+    .btn {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: $jost;
+        margin-left: 70px;
+        &.btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            &:hover {
+                background-color: #0056b3;
+            }
+        }
+        &.btn-danger {
+            background-color: $darkpink;
+            color: $white;
+            &:hover {
+                background-color: darken($darkpink, 10%);
+            }
+        }
+        &.btn-success {
+            background-color: #28a745; 
+            color: $white;
+            &:hover {
+                background-color: #218838; 
+            }
+        }
+    }
+
+    .statistics,
+    .project-showcase,
+    .project-analytics {
+        margin-bottom: 20px;
+        .chart-container {
+            margin-top: 20px;
+            canvas {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        h2{
+            font-family: $ropa;
+            font-size: 30px;
+            color: $darkpink;
+        }
+        h3{
+            font-family: $ropa;
+            font-size: 20px;
+            color: $silver;
+            display: none;
+        }
+    }
+
+    .team-members-create {
+        margin-bottom: 20px;
+        h2{
+            font-family: $ropa;
+            font-size: 30px;
+            color: $darkpink;
+            margin-left: 70px;
+        }
+        button{
+            border: 0;
+            background-color: #0056b3;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            &:hover {
+                background-color: #003366;
+                cursor: pointer;
+            }
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: $silver;
+            box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            tr {
+                border-bottom: 1px solid #ccc;
+
+            }
+
+            th, td {
+                padding: 8px;
+                text-align: left;
+
+                input{
+                    margin-left: 10px;
+                    outline: none;
+                    border: none;
+                    border-bottom: 1px solid $special;
+                    font-family: $jost;
+                }
+            }
+            th {
+                background-color: #f55f;
+                font-family: $ropa;
+                font-size: 16px;
+                padding : 10px;
+                padding-left: 20px;
+            }
+            tr:nth-child(even) {
+               background-color: $silver;
+               
+            }
+        }
+    }
+    .chart-container {
+        width: 900px;
+        height: 400px;
+    }
+
+    .project-showcase {
+        .project-cards {
+            display: flex;
+            flex-direction: column;
+            p{
+                font-family: $jost;
+                font-size: 16px;
+                margin-left: 10px;
+                margin-top: -40px;
+                width: 300px;
+                font-weight: 500;
+                color: $darkpink;
+            }
+            .row1{
+                display: flex;
+                flex-direction: row;
+            }
+            .row2{
+                display: flex;
+                flex-direction: row;
+            }
+
+            .card1{
+                @include project-card;
+                background: url("../images/cafe.avif");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+
+                &:hover{
+                    transition: all 0.3s ease-in-out;
+                    transform:  scale(1.1);
+                    animation: ease-in-out;
+                    transform: 0.3s;
+                }
+        }
+        .card2{
+            @include project-card;
+            background: url("../images/eccom.avif");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            &:hover{
+                transition: all 0.3s ease-in-out;
+                transform:  scale(1.1);
+                animation: ease-in-out;
+                transform: 0.3s;
+            }
+        }
+        .card3{
+            @include project-card;
+            background: url("../images/soci.avif");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            &:hover{
+                transition: all 0.3s ease-in-out;
+                transform:  scale(1.1);
+                animation: ease-in-out;
+                transform: 0.3s;
+            }
+        }
+        .card4{
+            @include project-card;
+            background: url("../images/online.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            &:hover{
+                transition: all 0.3s ease-in-out;
+                transform:  scale(1.1);
+                animation: ease-in-out;
+                transform: 0.3s;
+            }
+        }
+        .card5{
+            @include project-card;
+            background: url("../images/bot.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            &:hover{
+                transition: all 0.3s ease-in-out;
+                transform:  scale(1.1);
+                animation: ease-in-out;
+                transform: 0.3s;
+            }
+        }
+        .card6{
+            @include project-card;
+            background: url("../images/health.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            &:hover{
+                transition: all 0.3s ease-in-out;
+                transform:  scale(1.1);
+                animation: ease-in-out;
+                transform: 0.3s;
+            }
+        }
+    }
+    }
+}

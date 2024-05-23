@@ -1,0 +1,85 @@
+$greyish:#555555;
+$common-height:80px;
+$placeholder-color: #999;
+$frosted-glass: rgba(255, 255, 255, 0.5);
+$white: #fff;
+$special:#141C27;
+$jost: 'Jost', sans-serif;
+$rubik: 'Rubik', sans-serif;
+$ropa: 'Ropa Sans', sans-serif;
+$island:'Island Moments', cursive;
+$silver: #C0C0C0;
+.project-details-page {
+    padding: 20px;
+    font-family: $jost;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-left: 300px;
+  
+    .page-title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #333;
+    }
+  
+    .form-section {
+      // background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      font-family: $jost;
+  
+      h2 {
+        margin-bottom: 15px;
+        color: #0073e6;
+      }
+  
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+  
+        label {
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+  
+        input,
+        textarea,
+        select {
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          font-size: 14px;
+          background: #fff;
+        }
+  
+        textarea {
+          resize: vertical;
+        }
+      }
+    }
+  
+    .file-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+  
+    .chart-container {
+      margin: 20px 0;
+      height: 300px;
+  
+      h3 {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  

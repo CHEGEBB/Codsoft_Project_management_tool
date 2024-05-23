@@ -41,56 +41,92 @@ const SideNav = ({ isDarkMode, toggleDarkMode }) => {
             <ul>
                 <li>
                     <Link to="/home">
-                        <img src={Home} alt="Home Icon" />
-                        Dashboard
+                    <div className="navtem">
+                    <div className="image">
+                    <img src={Home} alt="Home Icon" />
+                    </div>
+                        <div className="item"> Dashboard</div>
+                        </div>
+                       
                     </Link>
                 </li>
                 <li>
                     <div onClick={() => handleDropdownClick('project')} className="dropdown-toggle">
-                        <img src={ProjectIcon} alt="Project Icon" />
-                        Project
+                        <div className="navtem">
+                            <div className="image">
+                            <img src={ProjectIcon} alt="Project Icon" />
+                            </div>
+                            <div className="item">
+                            Project
+                            </div>
+                        </div>
+                     
                         <img src={dropdownIcon} alt="Dropdown Icon" className="dropdown-icon" />
                     </div>
                     {openDropdown === 'project' && (
                         <ul className="dropdown">
+                        <div className="drop">
                             <li><Link to="/project/new">New Project</Link></li>
                             <li><Link to="/project/details">Details</Link></li>
+                            </div>
                         </ul>
                     )}
                 </li>
                 <li>
                     <div onClick={() => handleDropdownClick('tasks')} className="dropdown-toggle">
-                       <img src={TaskIcon} alt="Task Icon" /> 
-                        Tasks
+                    <div className="navtem">
+                        <div className="image">
+                        <img src={TaskIcon} alt="Task Icon" /> 
+                        </div>
+                        <div className="item"> Tasks</div>
+                    </div>
+                       
+                       
                         <img src={dropdownIcon} alt="Dropdown Icon" className="dropdown-icon" />
                     </div>
                     {openDropdown === 'tasks' && (
                         <ul className="dropdown">
+                        <div className="drop">
                             <li><Link to="/tasks/assign">Assign Task</Link></li>
+                            </div>
                         </ul>
                     )}
                 </li>
                 <li>
                     <div onClick={() => handleDropdownClick('progress')} className="dropdown-toggle">
-                       <img src={ProgressIcon} alt="Progress Icon" />
-                        Progress
+                    <div className="navtem">
+                    <div className="image">
+                    <img src={ProgressIcon} alt="Progress Icon" />
+                    </div>
+                        <div className="item"> Progress</div>
+                    </div>
+                       
                         <img src={dropdownIcon} alt="Dropdown Icon" className="dropdown-icon" />
                     </div>
                     {openDropdown === 'progress' && (
                         <ul className="dropdown">
+                        <div className="drop">
                             <li><Link to="/progress/track">Track Progress</Link></li>
+                            </div>
                         </ul>
                     )}
                 </li>
                 <li>
                     <div onClick={() => handleDropdownClick('timeline')} className="dropdown-toggle">
-                       <img src={TimelineIcon} alt="Timeline Icon" />
-                        Timeline
+                    <div className="navtem">
+                        <div className="image">
+                        <img src={TimelineIcon} alt="Timeline Icon" />
+                        </div>
+                        <div className="item">Timeline</div>
+                    </div>
+                  
                         <img src={dropdownIcon} alt="Dropdown Icon" className="dropdown-icon" />
                     </div>
                     {openDropdown === 'timeline' && (
                         <ul className="dropdown">
+                        <div className="drop">
                             <li><Link to="/timeline/deadline">Deadlines</Link></li>
+                            </div>
                         </ul>
                     )}
                 </li>

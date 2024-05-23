@@ -1,122 +1,239 @@
 @import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Jost:ital,wght@0,100..900;1,100..900&family=Ropa+Sans:ital@0;1&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-$greyish:#555555;
-$common-height:80px;
+
+$greyish: #555555;
+$common-height: 80px;
 $placeholder-color: #999;
 $frosted-glass: rgba(255, 255, 255, 0.5);
 $white: #fff;
-$special:#141C27;
+$special: #141C27;
 $jost: 'Jost', sans-serif;
 $rubik: 'Rubik', sans-serif;
 $ropa: 'Ropa Sans', sans-serif;
-$island:'Island Moments', cursive;
+$island: 'Island Moments', cursive;
 $silver: #C0C0C0;
+
 .my-dashboard {
-    display: flex;
-    flex-direction: row;
-    margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 60px;
 
-    .dash img{
-        width: 50px;
-        height: 50px;
-        margin-right: 20px;
-    
-    }
-    .board h1{
-        font-family: $ropa;
-        font-size: 20px;
-        color: #fff;
-    }
-}
-.side-nav {
-    width: 200px;
-    position: fixed;
-    height: 760px;
-    padding: 20px;
-    background: linear-gradient(to bottom, #8f37cd, #461046); 
+  .dash img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+  }
+
+  .board h1 {
+    font-family: $ropa;
+    font-size: 20px;
     color: #fff;
-    margin-top: 10px;
-    border-radius: 12px;
-    font-family: $jost;
-    font-size: 18px;
-    margin-left: 2px;
+  }
+}
 
-    .us-name{
+.side-nav {
+  width: 200px;
+  position: fixed;
+  height: 760px;
+  padding: 20px;
+  background: linear-gradient(to bottom, #8f37cd, #461046);
+  color: #fff;
+  margin-top: 10px;
+  border-radius: 12px;
+  font-family: $jost;
+  font-size: 18px;
+  margin-left: 2px;
+
+  .us-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    margin-bottom: 20px;
+
+    h1 {
+      color: #fff;
+      font-size: 30px;
+      font-family: $ropa;
+      display: flex;
+      justify-content: start;
+      margin-left: -50px;
+    }
+
+    p {
+      color: #fff;
+      font-size: 15px;
+      font-family: $jost;
+      display: flex;
+      justify-content: start;
+      margin-top: -10px;
+      margin-left: -60px;
+    }
+  }
+
+  ul {
+    list-style-type: none; /* Remove list item dots */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    li {
+      margin-bottom: 10px;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .dropdown-icon {
+        width: 20px;
+        height: 20px;
+        margin-left: 8px;
+      }
+
+      .dropdown-toggle {
+        cursor: pointer;
+        color: #fff;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown {
+        list-style-type: none;
+        padding-left: 20px;
+        margin-top: 10px;
+
+        li {
+          margin-bottom: 5px;
+
+          a {
+            text-decoration: none;
+            color: #16caca;
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .my-dashboard {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0px;
-        margin-bottom: 20px;
-
-        h1{
+        flex-direction: row;
+        margin-top: 60px;
+      
+        .dash img {
+          width: 50px;
+          height: 50px;
+          margin-right: 20px;
+        }
+      
+        .board h1 {
+          font-family: $ropa;
+          font-size: 20px;
+          color: #fff;
+        }
+      }
+      
+      .side-nav {
+        width: 200px;
+        position: fixed;
+        height: 100px;
+        padding: 20px;
+        background: linear-gradient(to bottom, #8f37cd, #461046);
+        color: #fff;
+        margin-top: 10px;
+        border-radius: 12px;
+        font-family: $jost;
+        font-size: 18px;
+        margin-left: 2px;
+      
+        .us-name {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0px;
+          margin-bottom: 20px;
+      
+          h1 {
             color: #fff;
             font-size: 30px;
             font-family: $ropa;
             display: flex;
-            justify-content:start;
+            justify-content: start;
             margin-left: -50px;
-        }
-        p{
+          }
+      
+          p {
             color: #fff;
             font-size: 15px;
             font-family: $jost;
             display: flex;
-            justify-content:start;
+            justify-content: start;
             margin-top: -10px;
             margin-left: -60px;
+          }
         }
-    }
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-        display: flex; 
-        flex-direction: column; 
-        gap: 10px;
-
-        img{
+      
+        ul {
+          list-style-type: none; /* Remove list item dots */
+          padding: 0;
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+      
+          img {
             width: 20px;
             height: 20px;
             margin-right: 10px;
-        }
-
+          }
       
-        li {
+          li {
             margin-bottom: 10px;
-          
-
+      
             a {
-                text-decoration: none;
-                color: #fff;
+              text-decoration: none;
+              color: #fff;
             }
+      
             .dropdown-icon {
-                width: 20px;
-                height: 20px;
-                margin-left: 8px;
+              width: 20px;
+              height: 20px;
+              margin-left: 8px;
             }
-
+      
             .dropdown-toggle {
-                cursor: pointer;
-                color: #fff;
-                text-decoration: none;
-                display: block;
+              cursor: pointer;
+              color: #fff;
+              text-decoration: none;
+              display: block;
             }
-
+      
             .dropdown {
-                list-style-type: none;
-                padding-left: 20px;
-                margin-top: 10px;
-
-                li {
-                    margin-bottom: 5px;
-
-                    a {
-                        text-decoration: none;
-                        color: #16caca;
-                        font-size: 14px;
-                        font-weight: bold;
-                    }
+              list-style-type: none;
+              padding-left: 20px;
+              margin-top: 10px;
+      
+              li {
+                margin-bottom: 5px;
+      
+                a {
+                  text-decoration: none;
+                  color: #16caca;
+                  font-size: 14px;
+                  font-weight: bold;
                 }
+              }
             }
+          }
         }
-    }
+      }
 }

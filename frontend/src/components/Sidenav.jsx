@@ -132,8 +132,14 @@ const SideNav = ({ isDarkMode, toggleDarkMode }) => {
                 </li>
                 <li>
                     <Link to="/teams">
+                    <div className="navtem">
+                        <div className="image">
                         <img src={TeamIcon} alt="Team Icon" />
-                        Teams
+                        </div>
+                        <div className="item">
+                            Teams
+                        </div>
+                    </div>
                     </Link>
                 </li>
             </ul>

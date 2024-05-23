@@ -489,19 +489,12 @@ body{
         }
     }
 }
-@media screen and (max-width: 768px) {
-    .home{
-        width: 375px;
-        background-color: red;
-    }
-
-}
 
 // mobile design 
 @media screen and (max-width: 768px) {
     .home{
-        width: 375px;
-        background-color: red;
+        width: 370px;
+        margin-left: 0px;
     }
     .header{
         display: flex;
@@ -565,6 +558,7 @@ body{
             margin-left: -30px;
             color: #008B8B;
             font-size: 16px;
+            display: none;
             .user-info{
                 display: flex;
                 flex-direction: column;
@@ -603,7 +597,7 @@ body{
             background-color: $frosted-glass;
             padding: 20px;
             border-radius: 12px;
-            width: 80%;
+            width: 300px;
             height: 300px;
             display: flex;
             flex-direction: column;
@@ -618,8 +612,8 @@ body{
     
     }
     #lineBarChart {
-        width: 70%; 
-        height: 600px; 
+        width: 300px; 
+        height: 900px; 
         margin: 0 auto; 
         // border: 1px solid $darkpink ; 
         border-radius: 8px; 
@@ -629,6 +623,7 @@ body{
     }
     .wave-chart{
         width:300px ;
+        margin-top: 40px;
     }
 
     #lineBarChart::before {
@@ -636,8 +631,8 @@ body{
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%; 
-        height: 100%;
+        width: 300px; 
+        height: 400px;
         background-color: rgba(255, 255, 255, 0.8); 
         z-index: 1;
     }
@@ -709,9 +704,9 @@ body{
             padding: 10px;
             border-radius: 5px;
             color: #fff;
-            width: 500px;
+            width: 300px;
             height: 200px;
-            margin-left: 50px;
+            margin-left: -15px;
     
             &:hover{
                 color: #fff;
@@ -727,9 +722,9 @@ body{
                 padding: 10px;
                 border-radius: 5px;
                 color: #fff;
-                width: 400px;
+                width: 300px;
                 height: 200px;
-                margin-left: 20px;
+                margin-left: -15px;
     
                 button{
                     background-color:$darkpink ;
@@ -763,8 +758,8 @@ body{
             }
       }
       .to-do-list {
-        margin-top: -90px;
-        width: 400px;
+        margin-top: 10px;
+        width: 300px;
         border: 1px solid #ccc;
         border-radius: 8px; 
         h2 {

@@ -144,14 +144,11 @@ const CreateProject = () => {
                 priority: projectDetails.priority
             };
     
-            // Note: The URL now uses the proxy '/api/projects'
             const response = await axios.post('http://localhost:5000/api/projects ', formData);
             console.log(response.data); // Log the created project data
     
-            // Optionally, you can redirect the user or show a success message here
         } catch (error) {
             console.error('Error creating project:', error);
-            // Handle error: show error message to the user
         }
     };
     

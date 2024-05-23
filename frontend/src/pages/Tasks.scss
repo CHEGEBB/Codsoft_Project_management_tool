@@ -140,4 +140,63 @@ $darkpink : #FF1493;
       }
     }
   }
+  // mobile design{
+  @media (max-width: 768px) {
+    .tasks {
+      padding: 10px;
+      padding-top: 80px;
   
+      .task-bar {
+        flex-direction: column;
+        margin-left: 0;
+  
+        &__title {
+          h1 {
+            margin-left: 0;
+          }
+        }
+  
+        .create-task-button {
+          margin-top: 10px;
+          button {
+            width: 100%;
+            gap: 20px;
+          }
+        }
+  
+        &__search {
+          margin-top: 10px;
+          input {
+            width: 100%;
+          }
+        }
+      }
+  
+      .task-table {
+        margin-left: 10px;
+        width: 350px;
+  
+        .table {
+          thead {
+            th {
+              font-size: 14px;
+            }
+          }
+  
+          tbody {
+            tr {
+              td {
+                .data-name {
+                  width: 100%;
+                }
+  
+                .data-number, .data-client, .data-status, .data-type, .data-priority, .data-assigned, .data-date {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

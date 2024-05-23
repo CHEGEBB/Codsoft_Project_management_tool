@@ -82,4 +82,13 @@ $silver: #C0C0C0;
       }
     }
   }
+
+  // mobile design
+  @media (max-width: 768px) {
+    .project-details-page {
+      margin-left: 0;
+      padding: 10px;
+      padding-top: 70px;
+    }
+  }
   

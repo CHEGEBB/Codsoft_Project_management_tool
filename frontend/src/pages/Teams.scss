@@ -158,4 +158,21 @@ $darkpink : #FF1493;
       flex-direction: column;
     }
   }
+
+  // mobile design
+  @media (max-width: 768px) {
+    .teams-page {
+      margin-left:60px;
+      padding: 10px;
+      padding-top: 70px;
+    }
+  
+    .team-members {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    .team-member {
+      width: 100%;
+    }
+  }
   

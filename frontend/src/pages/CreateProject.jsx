@@ -144,7 +144,7 @@ const CreateProject = () => {
                 priority: projectDetails.priority
             };
     
-            const response = await axios.post('http://localhost:5000/api/projects ', formData);
+            const response = await axios.post('https://codsoft-project-management-tool-1.onrender.com/api/projects ', formData);
             console.log(response.data); // Log the created project data
     
         } catch (error) {

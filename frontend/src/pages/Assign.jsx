@@ -91,7 +91,7 @@ const Tasks = () => {
         const newTask = tasks[tasks.length - 1];
     
         // Send a POST request to save the new task to the database
-        await axios.post('http://localhost:5000/api/tasks', newTask); // Assuming the backend route is '/api/tasks'
+        await axios.post('https://codsoft-project-management-tool-1.onrender.com/api/tasks', newTask); // Assuming the backend route is '/api/tasks'
         alert('Task saved successfully!');
       } catch (error) {
         console.error('Error saving task:', error);

@@ -119,6 +119,20 @@ $darkpink : #FF1493;
             }
         }
     }
+    .alert {
+        padding: 1rem;
+        margin-top: 1rem;
+        margin-left: 50px;
+        border-radius: 0.25rem;
+        border: 1px solid transparent;
+        font-family: $jost;
+        &-success {
+          color: #155724;
+          background-color: #d4edda;
+          border-color: #183897;
+        }
+      }
+      
 
     h1 {
         text-align: left;
@@ -271,7 +285,7 @@ $darkpink : #FF1493;
     }
 
     .team-members-create {
-        margin-bottom: 20px;
+        margin-top: 70px;
         h2{
             font-family: $ropa;
             font-size: 30px;

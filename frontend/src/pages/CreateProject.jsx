@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Doughnut, Bar } from 'react-chartjs-2';
 import { motion } from 'framer-motion';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import './CreateProject.scss';
 import axios from 'axios';
-
 
 const CreateProject = () => {
     const [projectDetails, setProjectDetails] = useState({
@@ -19,6 +20,8 @@ const CreateProject = () => {
         budget: '',
         priority: 'Medium'
     });
+
+    const [successMessage, setSuccessMessage] = useState('');
 
     const handleInputChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -143,51 +146,50 @@ const CreateProject = () => {
                 budget: projectDetails.budget,
                 priority: projectDetails.priority
             };
-    
-            const response = await axios.post('https://codsoft-project-management-tool-1.onrender.com/api/projects ', formData);
+
+            const response = await axios.post('https://codsoft-project-management-tool-1.onrender.com/api/projects', formData);
             console.log(response.data);
-    
+            setSuccessMessage('Project created successfully!');
+            setTimeout(() => setSuccessMessage(''), 3000);
+
         } catch (error) {
             console.error('Error creating project:', error);
         }
     };
-    
 
     return (
         <div className="project-create">
-        <div className="project-us">
-        <div className="man">
-            <h1>Project Management</h1>
-            <p><span className='us-name'>ProjectProctor</span>  is a project management tool that helps you organize your work and keep track of your projects.
-            </p>
-            </div>
-            <div className="us">
-            <div className="we">
-            <h1>We are best know for</h1>
-            </div>
-                
-                <div className="ads">
-                <div className="easy-management-card1">
-                    <h3>Easy Management</h3>
-                    <p>Manage your projects with ease and keep track of your progress.</p> 
+            <div className="project-us">
+                <div className="man">
+                    <h1>Project Management</h1>
+                    <p><span className='us-name'>ProjectProctor</span>  is a project management tool that helps you organize your work and keep track of your projects.
+                    </p>
                 </div>
-                <div className="Robust-Ai-intervention-card2">
-                    <h3>Robust AI Intervention</h3>
-                    <p>Our AI system helps you manage your projects efficiently and effectively.</p>
-                </div>
-                <div className="team-management-card3">
-                    <h3>Team Management</h3>
-                    <p>Manage your team and assign tasks to your team members.</p>
-                </div>
-
-                    <div className="organizational-focus-card4">
-                    <h3>Organizational Focus</h3>
-                    <p>Our tool helps you focus on your organizational goals and objectives.</p>
+                <div className="us">
+                    <div className="we">
+                        <h1>We are best known for</h1>
                     </div>
+                    <div className="ads">
+                        <div className="easy-management-card1">
+                            <h3>Easy Management</h3>
+                            <p>Manage your projects with ease and keep track of your progress.</p>
+                        </div>
+                        <div className="Robust-Ai-intervention-card2">
+                            <h3>Robust AI Intervention</h3>
+                            <p>Our AI system helps you manage your projects efficiently and effectively.</p>
+                        </div>
+                        <div className="team-management-card3">
+                            <h3>Team Management</h3>
+                            <p>Manage your team and assign tasks to your team members.</p>
+                        </div>
+                        <div className="organizational-focus-card4">
+                            <h3>Organizational Focus</h3>
+                            <p>Our tool helps you focus on your organizational goals and objectives.</p>
+                        </div>
                     </div>
+                </div>
             </div>
-        </div>
-        <div className="project-showcase">
+            <div className="project-showcase">
                 <h2>Best Team Projects Showcase</h2>
                 <motion.div
                     className="project-cards"
@@ -195,33 +197,29 @@ const CreateProject = () => {
                     initial="initial"
                     animate="animate"
                 >
-                <div className="row1">
-                    <motion.div className="card1"><p>Creative Cafe Responsive website</p></motion.div>
-                    <motion.div className="card2"><p>E-commerce Website</p></motion.div>
-                    <motion.div className="card3"><p>Online Learning Platform</p></motion.div>
-                   
+                    <div className="row1">
+                        <motion.div className="card1"><p>Creative Cafe Responsive website</p></motion.div>
+                        <motion.div className="card2"><p>E-commerce Website</p></motion.div>
+                        <motion.div className="card3"><p>Online Learning Platform</p></motion.div>
                     </div>
                     <div className="row2">
-                    <motion.div className="card4"><p>Online Learning Platform</p></motion.div>
-                    <motion.div className="card5"><p>Task Automation Bots</p></motion.div>
-                    <motion.div className="card6"><p>Healthcare Management System</p></motion.div>
+                        <motion.div className="card4"><p>Online Learning Platform</p></motion.div>
+                        <motion.div className="card5"><p>Task Automation Bots</p></motion.div>
+                        <motion.div className="card6"><p>Healthcare Management System</p></motion.div>
                     </div>
-
-                  
                 </motion.div>
             </div>
             <h1>Create Project</h1>
-            <form className="create-project-form"  onSubmit={handleSubmit}>
+            <form className="create-project-form" onSubmit={handleSubmit}>
+                {successMessage && <div className="alert alert-success">{successMessage}</div>}
                 <div className="form-group">
-                    <label htmlFor="projectName" style={{marginTop:40}}>Project Name</label>
+                    <label htmlFor="projectName" style={{ marginTop: 40 }}>Project Name</label>
                     <input type="text" id="projectName" name="projectName" value={projectDetails.projectName} onChange={handleInputChange} required className="form-control" />
                 </div>
-
                 <div className="form-group">
                     <label htmlFor="projectDescription">Explain what the Project Entails</label>
                     <textarea id="projectDescription" name="projectDescription" value={projectDetails.projectDescription} onChange={handleInputChange} required className="form-control"></textarea>
                 </div>
-
                 <div className="form-group">
                     <label htmlFor="projectCategory">Project Category</label>
                     <select id="projectCategory" name="projectCategory" value={projectDetails.projectCategory} onChange={handleInputChange} className="form-control">
@@ -237,41 +235,43 @@ const CreateProject = () => {
                         <option value="Graphic Design">Graphic Design</option>
                     </select>
                 </div>
-
                 <div className="form-group">
                     <label htmlFor="projectImages">Project Images & Document</label>
                     <input type="file" id="projectImages" name="projectImages" onChange={handleFileInputChange} multiple className="form-control" />
                 </div>
-
                 <div className="form-group">
                     <label htmlFor="projectStartDate">Project Start Date</label>
-                    <input type="date" id="projectStartDate" name="projectStartDate" value={projectDetails.projectStartDate} onChange={handleInputChange} className="form-control" />
+                    <DatePicker
+                        selected={projectDetails.projectStartDate ? new Date(projectDetails.projectStartDate) : null}
+                        onChange={(date) => setProjectDetails({ ...projectDetails, projectStartDate: date })}
+                        className="form-control"
+                        id="projectStartDate"
+                    />
                 </div>
-
                 <div className="form-group">
                     <label htmlFor="projectEndDate">Project End Date</label>
-                    <input type="date" id="projectEndDate" name="projectEndDate" value={projectDetails.projectEndDate} onChange={handleInputChange} className="form-control" />
+                    <DatePicker
+                        selected={projectDetails.projectEndDate ? new Date(projectDetails.projectEndDate) : null}
+                        onChange={(date) => setProjectDetails({ ...projectDetails, projectEndDate: date })}
+                        className="form-control"
+                        id="projectEndDate"
+                    />
                 </div>
-
                 <div className="form-group">
                     <label htmlFor="notificationSent">Notification Sent</label>
                     <select id="notificationSent" name="notificationSent" value={projectDetails.notificationSent} onChange={handleInputChange} className="form-control">
                         <option value="All">All</option>
                         <option value="Some">Some</option>
-                        {/* Add more options as needed */}
                     </select>
                 </div>
-
                 <div className="form-group">
                     <label htmlFor="taskAssignPerson">Task Assign Person</label>
                     <input type="text" id="taskAssignPerson" name="taskAssignPerson" value={projectDetails.taskAssignPerson} onChange={handleInputChange} className="form-control" />
                 </div>
-
                 <div className="form-group">
                     <label htmlFor="budget">Budget</label>
                     <input type="text" id="budget" name="budget" value={projectDetails.budget} onChange={handleInputChange} className="form-control" />
                 </div>
-
                 <div className="form-group">
                     <label htmlFor="priority">Priority</label>
                     <select id="priority" name="priority" value={projectDetails.priority} onChange={handleInputChange} className="form-control">
@@ -281,10 +281,9 @@ const CreateProject = () => {
                         <option value="Low">Low</option>
                     </select>
                 </div>
-
                 <button type="submit" className="btn btn-primary">Create Project</button>
+                {successMessage && <div className="alert alert-success">{successMessage}</div>}
             </form>
-
             <div className="team-members-create">
                 <h2>Team Members</h2>
                 <table className="table">
@@ -337,23 +336,19 @@ const CreateProject = () => {
                 </table>
                 <button onClick={addMember}>Add Member</button>
             </div>
-
-
-
             <div className="statistics">
                 <h2>Project Statistics</h2>
                 <div className="chart-container">
                     <Doughnut data={doughnutData} options={{ maintainAspectRatio: false }} />
                 </div>
             </div>
-
             <div className="project-analytics">
                 <h2>Project Analytics</h2>
                 <div className="chart-container">
                     <h3>Best Projects of All Time</h3>
                     <Bar data={barData} />
                 </div>
-                    </div>
+            </div>
         </div>
     );
 };

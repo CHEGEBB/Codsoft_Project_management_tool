@@ -163,10 +163,26 @@ $darkpink: #FF007F;
 
       .form-group {
         margin-top: 20px;
+        .password-strength {
+          margin-top: 0.5rem;
+          font-size: 0.875rem;
+          color:$darkpink;
+        }
+        
+
+        .alert {
+          margin-bottom: 1rem;
+        }
+        p{
+          color: $darkpink;
+          font-family: $jost;
+          font-weight: 500;
+        }
         label {
           display: block;
           margin-bottom: 5px;
           font-family: $jost;
+         
         }
         input {
           width: 320px;
@@ -188,6 +204,7 @@ $darkpink: #FF007F;
           input {
             border: 1px solid red;
           }
+          
         }
       }
       }
@@ -243,4 +260,22 @@ $darkpink: #FF007F;
       font-family: $jost;
       font-size: 16px;
     }
+}
+.alert {
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+
+  &-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+
+  &-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
 }

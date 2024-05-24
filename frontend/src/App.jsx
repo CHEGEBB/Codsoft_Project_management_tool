@@ -38,7 +38,6 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/*" element={<AuthenticatedRoutes />} />
       </Routes>
     </Router>
   );

@@ -177,6 +177,9 @@ $darkpink: #FF007F;
 
         .alert {
           margin-bottom: 1rem;
+          font-family: $jost;
+          font-size: 0.875rem;
+          height: 150px;
         }
         p{
           color: $darkpink;
@@ -282,5 +285,25 @@ $darkpink: #FF007F;
     color: #721c24;
     background-color: #f8d7da;
     border-color: #f5c6cb;
+  }
+}
+// mobile design
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+    height: 120vh;
+    padding: 20px;
+  }
+
+  .right {
+    width: 300px;
+    height: 300px;
+  }
+
+  .left-container {
+    width: 200px;
+    height: auto;
+    padding: 20px;
+    margin-top: 20px;
   }
 }

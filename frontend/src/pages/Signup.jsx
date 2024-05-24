@@ -33,7 +33,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await fetch('https://codsoft-project-management-tool-1.onrender.com/api/signup', {
+      const response = await fetch('https://codsoft-project-management-tool-1.onrender.com/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

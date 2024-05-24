@@ -10,6 +10,7 @@ const Signup = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [passwordStrength, setPasswordStrength] = useState('');
+  const [passwordMatch, setPasswordMatch] = useState('');
 
   const checkPasswordStrength = (password) => {
     if (password.length < 6) return 'Weak';
@@ -61,6 +62,21 @@ const Signup = () => {
     const newPassword = e.target.value;
     setPassword(newPassword);
     setPasswordStrength(checkPasswordStrength(newPassword));
+    if (newPassword !== confirmPassword) {
+      setPasswordMatch('Passwords do not match');
+    } else {
+      setPasswordMatch('Passwords match');
+    }
+  };
+
+  const handleConfirmPasswordChange = (e) => {
+    const confirmPwd = e.target.value;
+    setConfirmPassword(confirmPwd);
+    if (password !== confirmPwd) {
+      setPasswordMatch('Passwords do not match');
+    } else {
+      setPasswordMatch('Passwords match');
+    }
   };
 
   return (
@@ -107,7 +123,9 @@ const Signup = () => {
                     onChange={handlePasswordChange}
                     required
                   />
-                  <p>Password strength: {passwordStrength}</p>
+                  <p style={{ color: passwordStrength === 'Strong' ? 'green' : 'red' }}>
+                    Password strength: {passwordStrength}
+                  </p>
                 </div>
                 <div className="form-group">
                   <label htmlFor="confirmPassword">Confirm Password:</label>
@@ -117,9 +135,12 @@ const Signup = () => {
                     name="confirmPassword"
                     placeholder="Confirm your password"
                     value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    onChange={handleConfirmPasswordChange}
                     required
                   />
+                  <p style={{ color: passwordMatch === 'Passwords match' ? 'green' : 'red' }}>
+                    {passwordMatch}
+                  </p>
                 </div>
                 <button type="submit">Sign Up</button>
               </form>

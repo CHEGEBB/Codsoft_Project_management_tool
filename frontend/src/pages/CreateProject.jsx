@@ -145,7 +145,7 @@ const CreateProject = () => {
             };
     
             const response = await axios.post('https://codsoft-project-management-tool-1.onrender.com/api/projects ', formData);
-            console.log(response.data); // Log the created project data
+            console.log(response.data);
     
         } catch (error) {
             console.error('Error creating project:', error);

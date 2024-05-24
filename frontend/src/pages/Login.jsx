@@ -31,7 +31,7 @@ const Login = () => {
       }
     } catch (error) {
       console.error('Login failed:', error.message);
-      alert('Login failed. Please try again later.'); // Handle other errors
+      alert('Login failed. Please try again later.');
     }
   };
 

@@ -15,6 +15,8 @@ const SignUp = () => {
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
+  const [formExpanded, setFormExpanded] = useState(false); // State to track form expansion
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -61,6 +63,7 @@ const SignUp = () => {
 
       if (response.ok) {
         setRegistrationSuccess(true);
+        setFormExpanded(true); // Expand the form container
         setTimeout(() => {
           setRegistrationSuccess(false);
           navigate("/login");
@@ -77,7 +80,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="signup-container">
+    <div className={`signup-container ${formExpanded ? "expanded" : ""}`}>
       <div className="overlay"></div>
       <div className="card">
         <div className="left">

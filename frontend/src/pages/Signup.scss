@@ -25,6 +25,7 @@ $darkpink: #FF007F;
   background-image: url("../images/bg2.avif");
   background-size: cover;
   background-repeat: no-repeat;
+ 
   .overlay {
     background-color: rgba(5, 5, 5, 0.6);
     height: 100vh;
@@ -97,6 +98,10 @@ $darkpink: #FF007F;
     height: 500px;
     background-color: rgba(255, 255, 255, 0.7);
     border: 1px solid #8f37cd;
+    transition: all 0.3s ease;
+    &.expanded {
+      height: 900px;
+    }
 
 
     .horizontal-nav {

@@ -4,6 +4,8 @@ import EmailIcon from '../images/em.svg';
 import NotificationIcon from '../images/bell.svg';
 import SearchIcon from '../images/fluent--search-32-filled.svg';
 import user from '../images/john.jpg';
+import user1 from '../images/allan.jpg';
+import user2 from '../images/bob.jpg';
 import CalendarIcon from '../images/calendar.svg';
 import Chart from 'chart.js/auto';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
@@ -406,7 +408,7 @@ const Home = ({ darkMode }) => {
                     </div>
                     <div className="testimonial-user">
                         <div className="user-picture">
-                            <img src={user} alt="User" />
+                            <img src={user1} alt="User" />
                         </div>
                         <div className="user-info">
                             <p>Cole Daniels</p>
@@ -425,7 +427,7 @@ const Home = ({ darkMode }) => {
                     </div>
                     <div className="testimonial-user">
                         <div className="user-picture">
-                            <img src={user} alt="User" />
+                            <img src={user2} alt="User" />
                         </div>
                         <div className="user-info">
                             <p>John Rick</p>

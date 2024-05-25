@@ -46,12 +46,78 @@ body{
     gap: 30px;
     padding: 10px;
     border-radius: 12px;
+    .emails,
+    .notifications,
+    .calendar {
+        position: relative;
+
+        img {
+            position: relative;
+            z-index: 1;
+        }
+
+        .count-circle {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: crimson; 
+            color: #fff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 2;
+        }
+    }
+
+    .email-popup,
+    .notification-popup,
+    .calendar-popup {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        min-width: 200px;
+        max-height: 300px;
+        overflow-y: auto;
+        animation: popup-fade-in 0.3s ease forwards;
+        opacity: 0;
+
+
+        h3 {
+            margin-top: 0;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            border-style: solid;
+            border-width: 0 10px 10px 10px;
+            border-color: transparent transparent #fff transparent;
+        }
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
 
     .reach{
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 10px;
+        gap: 50px;
+        margin-left: 90px;
 
         .emails, .notifications,.calendar{
             margin-top: 10px;
@@ -60,6 +126,9 @@ body{
         img {
             width: 30px;
             height: 30px;
+            filter: hue-rotate(40deg);
+    color: $darkpink;
+           
 
             &:hover {
                 cursor: pointer;
@@ -488,6 +557,14 @@ body{
                 margin-top: 20px;
             }
         }
+    }
+}
+@keyframes popup-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
 

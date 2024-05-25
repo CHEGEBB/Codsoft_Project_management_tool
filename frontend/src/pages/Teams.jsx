@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Teams.scss';
-import { useState } from 'react';
 
 const TeamMember = ({ name, role, rating, description, address, phone, email }) => {
     const [isFlipped, setIsFlipped] = useState(false);
@@ -63,7 +62,16 @@ const Teams = () => {
             <h1>My Team</h1>
             <div className="team-members">
                 {teamMembers.map((member, index) => (
-                    <TeamMember key={index} {...member} />
+                    <TeamMember 
+                        key={index} 
+                        name={member.name} 
+                        role={member.role} 
+                        rating={member.rating} 
+                        description={member.description} 
+                        address={member.address} 
+                        phone={member.phone} 
+                        email={member.email} 
+                    />
                 ))}
             </div>
         </div>

@@ -1,27 +1,6 @@
 import React from 'react';
 import './Teams.scss';
 import { useState } from 'react';
-import SarahSmith from '../images/sarah.jpg';
-import JohnDoe from '../images/john.jpg';
-import EmilyJohnson from '../images/ash.jpg';
-import MichaelBrown from '../images/mike.jpg';
-import JessicaMiller from '../images/jessica.avif';
-import DavidWilson from '../images/david.jpg';
-import JenniferTaylor from '../images/jenni.jpg';
-import ChristopherMartinez from '../images/martinez.jpg';
-import EvaAdams from '../images/emily.jpg';
-
-const imageMap = {
-    'Sarah Smith': SarahSmith,
-    'John Doe': JohnDoe,
-    'Emily Johnson': EmilyJohnson,
-    'Michael Brown': MichaelBrown,
-    'Jessica Miller': JessicaMiller,
-    'David Wilson': DavidWilson,
-    'Jennifer Taylor': JenniferTaylor,
-    'Christopher Martinez': ChristopherMartinez,
-    'Eva Adams': EvaAdams,
-};
 
 const TeamMember = ({ name, role, rating, description, address, phone, email }) => {
     const [isFlipped, setIsFlipped] = useState(false);
@@ -30,16 +9,11 @@ const TeamMember = ({ name, role, rating, description, address, phone, email }) 
         setIsFlipped(!isFlipped);
     };
 
-    const ImageComponent = imageMap[name];
-
     return (
         <div className="team-member">
             <div className="flip-card">
                 <div className="flip-card-inner">
                     <div className="flip-card-front">
-                        <div className="profile-picture">
-                            <img src={ImageComponent} alt={name} />
-                        </div>
                         <div className="pers">
                             <div className="info-pers">
                                 <h2>{name}</h2>

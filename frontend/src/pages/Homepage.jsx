@@ -24,6 +24,9 @@ const Home = ({ darkMode }) => {
     const [percentageCompleted, setPercentageCompleted] = useState(0);
     const [percentageInProgress, setPercentageInProgress] = useState(0);
     const [percentageDelayed, setPercentageDelayed] = useState(0);
+    const [showEmails, setShowEmails] = useState(false);
+    const [showNotifications, setShowNotifications] = useState(false);
+    const [showCalendar, setShowCalendar] = useState(false);
     const [todos, setTodos] = useState([
         { text: 'Complete project report', completed: false },
         { text: 'Attend team meeting', completed: false },
@@ -210,6 +213,38 @@ const Home = ({ darkMode }) => {
         navigate('/project/new');
     }
 
+      const emails = [
+        { id: 1, sender: 'Alice', subject: 'Meeting Reminder', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+        { id: 2, sender: 'Bob', subject: 'Project Update', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+    ];
+
+    const notifications = [
+        { id: 1, content: 'You have a new message.' },
+        { id: 2, content: 'Reminder: Project deadline approaching.' },
+    ];
+
+    const calendarEvents = [
+        { id: 1, date: '2024-05-27', event: 'Project deadline' },
+        { id: 2, date: '2024-05-30', event: 'Team meeting' },
+    ];
+
+    const toggleEmailPopup = () => {
+        setShowEmails(!showEmails);
+    };
+
+    const toggleNotificationPopup = () => {
+        setShowNotifications(!showNotifications);
+    };
+
+    const toggleCalendarPopup = () => {
+        setShowCalendar(!showCalendar);
+    };
+
+    const getEmailCount = () => emails.length;
+    const getNotificationCount = () => notifications.length;
+    const getCalendarEventCount = () => calendarEvents.length;
+
+
     return (
         <div className={`home ${darkMode ? 'dark-mode' : ''}`}>
             <div className="header" style={headerTextStyle}>
@@ -221,18 +256,52 @@ const Home = ({ darkMode }) => {
                     <input type="text" placeholder="Search here..." />
                 </div>
                 <div className="reach">
-                    <div className="emails">
-                        <img src={EmailIcon} alt="Email" style={iconStyle} />
-                        <p>My Emails</p>
-                    </div>
-                    <div className="notifications">
-                        <img src={NotificationIcon} alt="Notification" style={iconStyle} />
-                        <p>Notifications</p>
-                    </div>
-                    <div className="calendar">
-                        <img src={CalendarIcon} alt="Calendar" style={iconStyle} />
-                        <p>Schedule</p>
-                    </div>
+                <div className="emails">
+                    <img src={EmailIcon} alt="Email" onClick={toggleEmailPopup} />
+                    {showEmails && (
+                        <div className="email-popup">
+                            <h3>Emails</h3>
+                            {emails.map(email => (
+                                <div key={email.id} className="email-item">
+                                    <p><strong>From:</strong> {email.sender}</p>
+                                    <p><strong>Subject:</strong> {email.subject}</p>
+                                    <p>{email.content}</p>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                    {getEmailCount() > 0 && <div className="count-circle">{getEmailCount()}</div>}
+                </div>
+                <div className="notifications">
+                    <img src={NotificationIcon} alt="Notification" onClick={toggleNotificationPopup} />
+                    {showNotifications && (
+                        <div className="notification-popup">
+                            <h3>Notifications</h3>
+                            <div className="notification-count">{notifications.length}</div>
+                            {notifications.map(notification => (
+                                <div key={notification.id} className="notification-item">
+                                    <p>{notification.content}</p>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                    {getNotificationCount() > 0 && <div className="count-circle">{getNotificationCount()}</div>}
+                </div>
+                <div className="calendar">
+                    <img src={CalendarIcon} alt="Calendar" onClick={toggleCalendarPopup} />
+                    {showCalendar && (
+                        <div className="calendar-popup">
+                            <h3>Calendar</h3>
+                            {calendarEvents.map(event => (
+                                <div key={event.id} className="calendar-event">
+                                    <p><strong>Date:</strong> {event.date}</p>
+                                    <p><strong>Event:</strong> {event.event}</p>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                    {getNotificationCount() > 0 && <div className="count-circle">{getNotificationCount()}</div>}
+                </div>
                 </div>
                 <div className="user-logged-in">
                     <div className="profile-picture">

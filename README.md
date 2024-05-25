@@ -4,7 +4,10 @@ Welcome to the Project Management Tool, a robust application designed to streaml
 
 ## 🚀 Live Demo
 
-Check out the live demo of the project [https://codsoft-project-management-tool-v2.onrender.com/](#).
+Check out the live demo of the project 
+```sh
+https://codsoft-project-management-tool-v2.onrender.com/
+```
 
 ## 📑 Table of Contents
 

@@ -3,7 +3,7 @@
 Welcome to the Project Management Tool, a robust application designed to streamline project planning, tracking, and collaboration. This project showcases a comprehensive project management solution, built using the MERN stack (MongoDB, Express.js, React, Node.js). It is the first project developed during my CODSOFT internship.
 
 ## 🚀🌐 Live Demo
- <a href="https://codsoft-project-management-tool-v2.onrender.com/"><strong>➥ Live Demo</strong></a>
+ <a href="https://codsoft-project-management-tool-1.onrender.com"><strong>➥ Live Demo</strong></a>
 
 
 ## 📑 Table of Contents

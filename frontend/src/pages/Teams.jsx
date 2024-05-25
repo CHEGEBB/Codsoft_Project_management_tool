@@ -11,14 +11,26 @@ import JenniferTaylor from '../images/jenni.jpg';
 import ChristopherMartinez from '../images/martinez.jpg';
 import EvaAdams from '../images/emily.jpg';
 
+const imageMap = {
+    'Sarah Smith': SarahSmith,
+    'John Doe': JohnDoe,
+    'Emily Johnson': EmilyJohnson,
+    'Michael Brown': MichaelBrown,
+    'Jessica Miller': JessicaMiller,
+    'David Wilson': DavidWilson,
+    'Jennifer Taylor': JenniferTaylor,
+    'Christopher Martinez': ChristopherMartinez,
+    'Eva Adams': EvaAdams,
+};
+
 const TeamMember = ({ name, role, rating, description, address, phone, email }) => {
     const [isFlipped, setIsFlipped] = useState(false);
 
     const handleClick = () => {
         setIsFlipped(!isFlipped);
     };
-   
-    const imageName = eval(name.replace(/\s+/g, ''));
+
+    const ImageComponent = imageMap[name];
 
     return (
         <div className="team-member">
@@ -26,27 +38,27 @@ const TeamMember = ({ name, role, rating, description, address, phone, email }) 
                 <div className="flip-card-inner">
                     <div className="flip-card-front">
                         <div className="profile-picture">
-                            <img src={imageName} alt={name} />
+                            <img src={ImageComponent} alt={name} />
                         </div>
                         <div className="pers">
-                        <div className="info-pers">
-                        <h2>{name}</h2>
-                        <p className="role">{role}</p>
+                            <div className="info-pers">
+                                <h2>{name}</h2>
+                                <p className="role">{role}</p>
+                            </div>
+                            <div className="rating">
+                                <span>⭐</span>
+                                <span>⭐</span>
+                                <span>⭐</span>
+                                <span>⭐</span>
+                            </div>
                         </div>
-                        <div className="rating">
-                                <span>⭐</span>
-                                <span>⭐</span>
-                                <span>⭐</span>
-                                <span>⭐</span>
-                                </div>
-                                </div>
                     </div>
                     <div className="flip-card-back">
                         <div className="un">
-                        <p className='unique'>{description}</p>
+                            <p className='unique'>{description}</p>
                         </div>
                         <div className="address">
-                        <p>{address}</p>
+                            <p>{address}</p>
                         </div>
                         <div className="contact-info">
                             <p>{phone}</p>

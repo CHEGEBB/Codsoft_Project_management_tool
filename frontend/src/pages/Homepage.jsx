@@ -49,7 +49,6 @@ const Home = ({ darkMode }) => {
     };
 
     useEffect(() => {
-        // Simulate an API call to get project status
         setTimeout(() => {
             setPercentageCompleted(75);
             setPercentageInProgress(50);
@@ -124,7 +123,7 @@ const Home = ({ darkMode }) => {
                 data: {
                     labels: ['Contribution to Projects', 'Contribution to Team-Projects', 'Task Completion Rate'],
                     datasets: [{
-                        data: [65, 59, 80], // Change this to reflect actual data
+                        data: [65, 59, 80],
                         backgroundColor: [
                             darkMode ? 'rgba(72, 61, 139, 0.5)' : 'rgba(255, 99, 132, 0.5)',
                             darkMode ? '#C71585' : '#00CED1',
